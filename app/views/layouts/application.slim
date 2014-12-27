@@ -1,0 +1,18 @@
+html
+  head
+    title Blog
+    = stylesheet_link_tag    'application', media: 'all'
+    = javascript_include_tag 'application'
+    = csrf_meta_tags
+
+  body
+    #top-background
+      #top.container-fluid
+        .container
+          .row
+            .col-sm-12
+              h1 
+                span Przemyslaw Krowinski Blog
+              p Personal blog about origramming, web and game development
+    .container
+      = yield
