@@ -5,6 +5,8 @@
       p = post.text
       p = link_to 'Read more &raquo;'.html_safe, post
 
-br
 
-= link_to 'New Post', new_post_path
+- if user_signed_in?
+  .row
+    .col-md-8.col-md-offset-2
+      = link_to 'New Post', new_post_path
