@@ -1,8 +1,8 @@
 - @posts.each do |post|
-  .row
+  .row.post
     .col-md-8.col-md-offset-2
-      h2 = post.title
-      p = post.text
+      h2 = link_to post.title, post
+      = markdown(truncate(post.text, length: 350, separator: ' '))
       p = link_to 'Read more &raquo;'.html_safe, post
 
 

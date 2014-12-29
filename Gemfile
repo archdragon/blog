@@ -38,6 +38,9 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
 
+# Tags
+gem 'acts-as-taggable-on', '~> 3.4'
+
 # Pretty links
 gem 'friendly_id', '~> 5.0.0'
 
@@ -49,3 +52,6 @@ gem 'slim'
 gem 'slim-rails'
 gem 'simple_form'
 gem 'bootstrap_form'
+
+# Markdown
+gem 'redcarpet', '~> 3.0.0'

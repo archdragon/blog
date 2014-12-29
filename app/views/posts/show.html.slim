@@ -1,8 +1,9 @@
 p#notice = notice
 
-h2 = @post.title
-p
-  = @post.text
+.row.post
+  .col-md-12
+    h2 = @post.title
+    = markdown(@post.text)
 
 - if user_signed_in?
   = link_to 'Edit', edit_post_path(@post)
