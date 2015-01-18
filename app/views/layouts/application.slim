@@ -1,7 +1,8 @@
 html
   head
     title Blog
-    = stylesheet_link_tag    'application', media: 'all'
+    = stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Montserrat:300,400|Open+Sans:400,300'
+    = stylesheet_link_tag 'application', media: 'all'
     = javascript_include_tag 'application'
     = csrf_meta_tags
 
@@ -13,6 +14,20 @@ html
             .col-sm-12
               h1 
                 a href="/" Przemyslaw Krowinski Blog
-              p Personal blog about origramming, web and game development
+              p Personal blog about programming, web and game development
+    - flash.each do |name, msg|
+      .container
+        = content_tag :div, msg, class: "alert alert-info alert-"+name
     .container
       = yield
+
+    - if current_user
+      .container
+        = link_to 'Sign out', destroy_user_session_path, :method => :delete
+
+    footer
+      ul.nav-footer
+        li
+          a href="http://krowinski.com" Portfolio
+        li
+          a href="http://krowinski.com" Github
