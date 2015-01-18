@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users #, :skip => :registrations
+  devise_for :users, :controllers => {:registrations => "registrations"} #, :skip => :registrations
 
   authenticate :user do
     resources :posts, :only => [:new, :create, :edit, :update, :destroy]
@@ -7,8 +7,9 @@ Rails.application.routes.draw do
   resources :posts, :only => [:index, :show]
 
   authenticated :user do
-    resources :users
+
   end
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
