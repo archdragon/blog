@@ -1,0 +1,1 @@
+Rails.application.config.assets.precompile += %w( classie.js animated_header.js )

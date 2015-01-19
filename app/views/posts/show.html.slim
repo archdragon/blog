@@ -1,11 +1,24 @@
-p#notice = notice
+#container.container-post.intro-effect-fadeout
+  header.header
+    .bg-img = image_tag("bg.jpg")
+    .title
+      h1 = @post.title
+      p Test test
+    .menu
+      a href="/" 
+        span.glyphicon.glyphicon-chevron-left
+        |  Back to main page
+  button.trigger data-info="Click to see the post"
+    span Trigger
 
-.row.post
-  .col-md-12
-    h2 = @post.title
-    = markdown(@post.text)
+  article.container
+    p#notice = notice
 
-- if user_signed_in?
-  = link_to 'Edit', edit_post_path(@post)
+    .row.post
+      .col-md-12
+        = markdown(@post.text)
+
+    - if user_signed_in?
+      = link_to 'Edit', edit_post_path(@post)
 
 
