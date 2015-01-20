@@ -20,4 +20,16 @@ module ApplicationHelper
 
     markdown.render(text).html_safe
   end
+
+  def page_title
+    ""
+  end
+
+  def page_keywords
+    ""
+  end
+
+  def page_description
+    ""
+  end
 end
