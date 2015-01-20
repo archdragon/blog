@@ -1,7 +1,7 @@
 module ApplicationHelper
   def markdown(text)
     options = {
-      filter_html:     true,
+      filter_html:     false,
       hard_wrap:       true, 
       link_attributes: { rel: 'nofollow', target: "_blank" },
       space_after_headers: true, 
@@ -11,7 +11,8 @@ module ApplicationHelper
     extensions = {
       autolink:           true,
       superscript:        true,
-      disable_indented_code_blocks: true
+      disable_indented_code_blocks: true,
+      tables: true
     }
 
     renderer = Redcarpet::Render::HTML.new(options)
