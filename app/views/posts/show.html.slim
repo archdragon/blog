@@ -1,7 +1,10 @@
 #container.container-post.intro-effect-fadeout
   header.header
     .bg-img 
-      .inner-image style="background-image: url(#{asset_url('bg.jpg')})"
+      - if @post.image
+        .inner-image style="background-image: url(#{asset_url(@post.image.image_file.url)})"
+      - else
+        .inner-image style="background-image: url(#{asset_url('bg.jpg')})"
     .title
       h1 = @post.title
       p = @post.tagline
