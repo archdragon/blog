@@ -12,7 +12,7 @@ Devise.setup do |config|
   # with default "from" parameter.
   config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
 
-  config.secret_key = File.read("shared/secrets/secret_key") if Rails.env.production?
+  config.secret_key = File.read("../shared/secrets/secret_key") if Rails.env.production?
 
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
