@@ -9,9 +9,8 @@ Rails.application.routes.draw do
   end
   resources :posts, :only => [:index, :show]
 
-  authenticated :user do
 
-  end
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.
