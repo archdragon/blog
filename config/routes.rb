@@ -3,7 +3,9 @@ Rails.application.routes.draw do
 
   authenticate :user do
     resources :posts, :only => [:new, :create, :edit, :update, :destroy]
-    resources :images
+    namespace :admin do
+      resources :images
+    end
   end
   resources :posts, :only => [:index, :show]
 
