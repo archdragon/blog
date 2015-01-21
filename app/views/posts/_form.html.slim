@@ -11,7 +11,7 @@
   .field
     = f.text_field :tagline
   .field
-    = f.select(:image, images_select_options)
+    = f.select(:image_id, images_select_options)
   .field
     = f.text_area :text, rows: 16
   .actions = f.submit 'Save'
