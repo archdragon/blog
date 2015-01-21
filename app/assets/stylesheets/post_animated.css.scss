@@ -185,7 +185,7 @@ button.trigger span::before {
 .intro-effect-fadeout:not(.notrans) .bg-img::after,
 .intro-effect-fadeout:not(.notrans) .header h1,
 .intro-effect-fadeout:not(.notrans) .header p,
-.intro-effect-fadeout:not(.notrans) .content > div {
+.intro-effect-fadeout:not(.notrans) .content {
   -webkit-transition-duration: 0.5s;
   transition-duration: 0.5s;
 }
@@ -252,14 +252,15 @@ button.trigger span::before {
   position: relative;
 }
 
-.intro-effect-fadeout .content > div {
+.intro-effect-fadeout .content {
   opacity: 0;
   -webkit-transform: translateY(350px);
   transform: translateY(350px);
 }
 
-.intro-effect-fadeout.modify .content > div {
+.intro-effect-fadeout.modify .content {
   opacity: 1;
-  -webkit-transform: translateY(0);
-  transform: translateY(0);
+  -webkit-transform: translateY(-100px);
+  transform: translateY(-100px);
+  margin-bottom: 450px;
 }
