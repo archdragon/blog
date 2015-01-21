@@ -12,11 +12,11 @@
   button.trigger data-info="Click to see the post"
     span Trigger
 
-  article.container
+  .container
     p#notice = notice
 
     .row.post
-      .col-md-10.col-md-offset-1
+      article.col-md-10.col-md-offset-1
         = markdown(@post.text)
 
     - if user_signed_in?
