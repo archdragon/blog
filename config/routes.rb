@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   authenticate :user do
     resources :posts, :only => [:new, :create, :edit, :update, :destroy]
+    resources :images
   end
   resources :posts, :only => [:index, :show]
 
