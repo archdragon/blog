@@ -27,7 +27,6 @@ class PostsController < ApplicationController
   # POST /posts.json
   def create
     @post = Post.new(post_params)
-    @post.image = Image.find(params[:image_id])
     @post.user = current_user
 
     if @post.save
@@ -42,7 +41,6 @@ class PostsController < ApplicationController
   # PATCH/PUT /posts/1.json
   def update
     @post.user = current_user
-    @post.image = Image.find(params[:image_id])
     if @post.update(post_params)
       redirect_to @post, notice: 'Post was successfully updated.'
     else
@@ -67,6 +65,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :text, :tagline)
+      params.require(:post).permit(:title, :text, :tagline, :image_id)
     end
 end
