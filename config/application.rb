@@ -19,5 +19,8 @@ module Blog
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
+    config.default_page_title = "P. Krowinski Blog - Programming, web and gamedev"
+    config.default_page_description = "Blog about programming, technology and Ruby on Rails"
+    config.default_page_keywords = "ruby, ruby on rails, webdev, gamedev, we development, programming, krowinski, blog"
   end
 end
