@@ -7,6 +7,7 @@ class Admin::ImagesController < ApplicationController
   end
 
   def show
+  
   end
 
   def new

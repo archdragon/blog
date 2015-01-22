@@ -1,0 +1,5 @@
+ul
+  - @images.each do |image|
+    li 
+      p =image.name
+      p =link_to("Link", image.image_file.url)
