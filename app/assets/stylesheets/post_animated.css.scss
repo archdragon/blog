@@ -264,3 +264,8 @@ button.trigger span::before {
   transform: translateY(-100px);
   margin-bottom: 450px;
 }
+
+.comments {
+  position: relative;
+  top: -450px;
+}
