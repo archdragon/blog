@@ -8,10 +8,10 @@
     .title
       h1 = @post.title
       p = @post.tagline
-    .menu
+    nav.menu
       a href="/" 
         span.glyphicon.glyphicon-chevron-left
-        |  Back to main page
+        |  Home
   button.trigger data-info="Click to see the post"
     span Trigger
 
@@ -21,6 +21,11 @@
     .row.post
       article.col-md-10.col-md-offset-1
         = markdown(@post.text)
+
+  .container.comments
+    .row
+      .col-md-10.col-md-offset-1
+        = render partial: "disqus"
 
     - if user_signed_in?
       = link_to 'Edit', edit_post_path(@post)
