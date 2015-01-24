@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:edit, :update, :destroy]
-  before_action :authenticate_user!, only: [:create, :upate, :destroy, :edit, :new]
+  before_action :authenticate_user!, only: [:create, :upate, :destroy, :edit, :new, :unpublished]
 
   # GET /posts
   # GET /posts.json
@@ -8,10 +8,14 @@ class PostsController < ApplicationController
     @posts = Post.published.all
   end
 
+  def unpublished
+    @posts = Post.unpublished.all
+  end
+
   # GET /posts/1
   # GET /posts/1.json
   def show
-    @post = Post.published.find(params[:id])
+    @post = Post.published.friendly.find(params[:id])
     set_page_head_data(@post)
     render layout: "single_post"
   end
@@ -71,6 +75,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :text, :tagline, :image_id)
+      params.require(:post).permit(:title, :text, :tagline, :image_id, :draft)
     end
 end
