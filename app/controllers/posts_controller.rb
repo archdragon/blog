@@ -10,6 +10,7 @@ class PostsController < ApplicationController
 
   def unpublished
     @posts = Post.unpublished.all
+    render :index
   end
 
   # GET /posts/1
