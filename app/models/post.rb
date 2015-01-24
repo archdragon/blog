@@ -8,4 +8,5 @@ class Post < ActiveRecord::Base
   friendly_id :title, use: :slugged
 
   scope :published, -> { where(draft: false) }
+  scope :unpublished, -> { where(draft: true) }
 end
