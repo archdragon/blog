@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150121042714) do
+ActiveRecord::Schema.define(version: 20150124215121) do
 
   create_table "friendly_id_slugs", force: true do |t|
     t.string   "slug",                      null: false
@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 20150121042714) do
     t.string   "slug"
     t.string   "tagline"
     t.integer  "image_id"
+    t.boolean  "draft"
   end
 
   add_index "posts", ["slug"], name: "index_posts_on_slug", unique: true, using: :btree
