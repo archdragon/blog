@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 20150124215121) do
     t.string   "slug"
     t.string   "tagline"
     t.integer  "image_id"
-    t.boolean  "draft"
+    t.boolean  "draft",      default: true
   end
 
   add_index "posts", ["slug"], name: "index_posts_on_slug", unique: true, using: :btree
