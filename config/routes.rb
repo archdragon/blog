@@ -2,7 +2,11 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => {:registrations => "registrations"} #, :skip => :registrations
 
   authenticate :user do
-    resources :posts, :only => [:new, :create, :edit, :update, :destroy]
+    resources :posts, :only => [:new, :create, :edit, :update, :destroy, :unpublished] do
+      collection do
+        get "unpublished"
+      end
+    end
     namespace :admin do
       resources :images
     end
