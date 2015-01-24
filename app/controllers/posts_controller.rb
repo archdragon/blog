@@ -16,7 +16,12 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
-    @post = Post.published.friendly.find(params[:id])
+    if user_signed_in?
+      @post = Post.friendly.find(params[:id])
+    else
+      @post = Post.published.friendly.find(params[:id])
+    end
+    
     set_page_head_data(@post)
     render layout: "single_post"
   end
