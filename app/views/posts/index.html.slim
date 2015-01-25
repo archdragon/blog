@@ -1,12 +1,12 @@
 - @posts.each do |post|
   .row.post
     .col-md-8.col-md-offset-2
-      h2 
+      h2.post-title 
         = link_to post.title, post
         - if !post.draft
           '  
           .label.label-warning Unpublished
-      = markdown(truncate(post.text, length: 350, separator: ' '))
+      .post-text = markdown(truncate(post.text, length: 350, separator: ' '))
       p = link_to 'Read more &raquo;'.html_safe, post
 
 
