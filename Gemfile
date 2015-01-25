@@ -60,7 +60,7 @@ gem 'bootstrap_form'
 gem 'redcarpet', '~> 3.0.0'
 
 # Syntax highlighting
-gem 'coderay'
+gem 'rouge'
 
 # HTML (and XML) parsing
 gem 'nokogiri'
