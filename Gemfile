@@ -58,3 +58,9 @@ gem 'bootstrap_form'
 
 # Markdown
 gem 'redcarpet', '~> 3.0.0'
+
+# Syntax highlighting
+gem 'coderay'
+
+# HTML (and XML) parsing
+gem 'nokogiri'
