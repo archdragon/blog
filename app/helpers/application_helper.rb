@@ -12,13 +12,23 @@ module ApplicationHelper
       autolink:           true,
       superscript:        true,
       disable_indented_code_blocks: true,
+      fenced_code_blocks: true,
       tables: true
     }
 
     renderer = Redcarpet::Render::HTML.new(options)
     markdown = Redcarpet::Markdown.new(renderer, extensions)
 
-    markdown.render(text).html_safe
+    html_text = markdown.render(text).html_safe
+    syntax_highlight(html_text).html_safe
+  end
+
+  def syntax_highlight(html)
+    doc = Nokogiri::HTML(html)
+    doc.search("//code").each do |node|
+      node.replace CodeRay.scan("puts 'Hello, world!'", :ruby).div
+    end  
+    doc.to_s
   end
 
   def page_title
