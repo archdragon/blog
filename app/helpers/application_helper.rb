@@ -16,19 +16,10 @@ module ApplicationHelper
       tables: true
     }
 
-    renderer = Redcarpet::Render::HTML.new(options)
+    renderer = Rouge::Renderer::HTML5.new(options)
     markdown = Redcarpet::Markdown.new(renderer, extensions)
 
     html_text = markdown.render(text).html_safe
-    syntax_highlight(html_text).html_safe
-  end
-
-  def syntax_highlight(html)
-    doc = Nokogiri::HTML(html)
-    doc.search("//code").each do |node|
-      node.replace CodeRay.scan("puts 'Hello, world!'", :ruby).div
-    end  
-    doc.to_s
   end
 
   def page_title
