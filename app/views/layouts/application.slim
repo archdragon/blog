@@ -24,13 +24,11 @@ html
               p Personal blog about programming, web and game development
     - flash.each do |name, msg|
       .container
-        = content_tag :div, msg, class: "alert alert-info alert-"+name
+        = content_tag :div, msg, class: flash_class(name)
     #main-page.container
       = yield
 
-    - if current_user
-      .container
-        = link_to 'Sign out', destroy_user_session_path, :method => :delete
+      = render partial: 'shared/admin_footer'
 
     footer
       ul.nav-footer
