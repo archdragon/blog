@@ -74,10 +74,10 @@
         function scrollY() {
           return window.pageYOffset || docElem.scrollTop;
         }
-        
+
         function scrollPage() {
           scrollVal = scrollY();
-          
+
           if( noscroll && !ie ) {
             if( scrollVal < 0 ) return false;
             // keep it that way
@@ -92,7 +92,7 @@
           if( isAnimating ) {
             return false;
           }
-          
+
           if( scrollVal <= 0 && isRevealed ) {
             toggle(0);
           }
@@ -103,7 +103,7 @@
 
         function toggle( reveal ) {
           isAnimating = true;
-          
+
           if( reveal ) {
             classie.add( container, 'modify' );
           }
@@ -127,15 +127,15 @@
         // refreshing the page...
         var pageScroll = scrollY();
         noscroll = pageScroll === 0;
-        
+
         //disable_scroll();
-        
+
         if( pageScroll ) {
           isRevealed = true;
           classie.add( container, 'notrans' );
           classie.add( container, 'modify' );
         }
-        
+
         window.addEventListener( 'scroll', scrollPage );
         trigger.addEventListener( 'click', function() { toggle( 'reveal' ); } );
       })();
