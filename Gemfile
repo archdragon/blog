@@ -57,6 +57,9 @@ gem 'slim-rails'
 gem 'simple_form'
 gem 'bootstrap_form'
 
+# My Gems
+gem 'arch_presenter'
+
 # Markdown
 gem 'redcarpet', '~> 3.0.0'
 
