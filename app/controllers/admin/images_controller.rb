@@ -20,7 +20,7 @@ class Admin::ImagesController < ApplicationController
     @image = Image.new(image_params)
 
     if @image.save
-      redirect_to @image, notice: 'image was successfully created.'
+      redirect_to [:admin, @image], notice: 'image was successfully created.'
     else
       render :new
     end
@@ -29,7 +29,7 @@ class Admin::ImagesController < ApplicationController
   def update
     @image.user = current_user
     if @image.update(image_params)
-      redirect_to @image, notice: 'image was successfully updated.'
+      redirect_to [:admin, @image], notice: 'image was successfully updated.'
     else
       render :edit
     end
@@ -37,7 +37,7 @@ class Admin::ImagesController < ApplicationController
 
   def destroy
     @image.destroy
-    redirect_to images_url, notice: 'Image was successfully destroyed.'
+    redirect_to admin_images_url, notice: 'Image was successfully destroyed.'
   end
 
   private
