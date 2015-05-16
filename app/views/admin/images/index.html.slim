@@ -1,5 +1,10 @@
-ul
+.row
   - @images.each do |image|
-    li 
-      p =image.name
-      p =link_to("Link", image.image_file.url)
+    .col-sm-4 
+      h4 =image.name
+      p =image_tag image.image_file.url(:thumb)
+      p =link_to("Link", )
+        .btn-group
+          a.btn.btn-default href="#{image.image_file.url(:thumb)}"
+            span.glyphicon.glyphicon-link
+          = link_to('<span class="glyphicon glyphicon-trash"></span>'.html_safe, admin_image_path(image), method: 'delete', class: 'btn btn-default')
