@@ -5,9 +5,11 @@
       ul
         - @image.errors.full_messages.each do |message|
           li = message
-
-  .field
-    = f.text_field :name
-  .field
-    = f.file_field :image_file
-  .actions = f.submit 'Save'
+  .row
+    .col-sm-6
+      = f.text_field :name
+    .col-sm-6
+      = f.file_field :image_file
+  .row
+    .col-sm-12
+      = f.submit 'Save'
