@@ -20,14 +20,12 @@
 
     .row.post
       article.col-md-10.col-md-offset-1
-        = markdown(@post.text)
+        = @post.formatted_text
 
   .container.comments
     .row
       .col-md-10.col-md-offset-1
         = render partial: "disqus"
 
-    - if user_signed_in?
-      = link_to 'Edit', edit_post_path(@post)
-
-
+  .container
+    = render partial: 'shared/admin_footer'
