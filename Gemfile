@@ -13,6 +13,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
+gem 'rails_bootstrap_alerts', git: 'https://github.com/archdragon/rails_bootstrap_alerts'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -64,3 +65,11 @@ gem 'rouge'
 
 # HTML (and XML) parsing
 gem 'nokogiri'
+
+group :test do
+  gem 'factory_girl_rails', "~> 4.0"
+  gem 'rspec-rails', '~> 3.0.0'
+  gem 'capybara'
+  gem 'poltergeist'
+  gem 'database_cleaner'
+end
