@@ -1,0 +1,10 @@
+  - if current_user
+    .panel.panel-default
+      .panel-heading Admin tools
+      .panel-body
+        ul
+          - if !@post.nil? && !@post.new_record?
+            li = link_to 'Edit this post', edit_post_path(@post)
+          li = link_to 'Edit images', admin_images_path
+          li = link_to 'Edit posts', posts_path
+          li = link_to 'Sign out', destroy_user_session_path, :method => :delete
