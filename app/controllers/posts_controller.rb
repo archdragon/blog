@@ -45,7 +45,9 @@ class PostsController < ApplicationController
   end
 
   def update
-    @post.user = current_user
+    post = Post.friendly.find(params[:id])
+    post.user = current_user
+    @post = present(post)
     if @post.update(post_params)
       redirect_to @post, notice: 'Post was successfully updated.'
     else
