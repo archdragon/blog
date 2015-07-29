@@ -7,7 +7,7 @@
         - if post.draft
           '  
           .label.label-warning Unpublished
-      .post-text = truncate(post.formatted_text, length: 350, separator: ' ').html_safe
+      .post-text = truncate(post.formatted_text, length: 350, separator: ' ', escape: false)
       p = link_to 'Read more &raquo;'.html_safe, post
 
 - if user_signed_in?
