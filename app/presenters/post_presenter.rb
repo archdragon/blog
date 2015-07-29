@@ -21,6 +21,7 @@ class PostPresenter < SimpleDelegator
 
     html_text = markdown.render(text).html_safe
   end
+
   def human_attribute_name(*args)
     __getobj__
   end
