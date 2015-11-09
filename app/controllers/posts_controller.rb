@@ -30,6 +30,7 @@ class PostsController < ApplicationController
   def edit
     post = Post.friendly.find(params[:id])
     @post = present(post)
+    render layout: "admin"
   end
 
   def create
