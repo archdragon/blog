@@ -47,6 +47,7 @@ class PostsController < ApplicationController
 
   def update
     post = Post.friendly.find(params[:id])
+    post.tag_list = params[:tag_list]
     post.user = current_user
     @post = present(post)
     if @post.update(post_params)
@@ -69,6 +70,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :text, :tagline, :image_id, :draft)
+      params.require(:post).permit(:title, :text, :tagline, :image_id, :draft, :tag_list)
     end
 end

@@ -12,6 +12,8 @@ Rails.application.routes.draw do
     end
   end
   resources :posts, :only => [:index, :show]
+  resources :tags, :only => [:index]
+  get 'tag/:name' => 'tags#show', as: 'tag_name'
 
 
 

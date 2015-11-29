@@ -1,14 +1,5 @@
 - @posts.each do |post|
-  - post = present(post)
-  .row.post
-    .col-md-8.col-md-offset-2
-      h2.post-title 
-        = link_to post.title, post
-        - if post.draft
-          '  
-          .label.label-warning Unpublished
-      .post-text = truncate(post.formatted_text, length: 350, separator: ' ', escape: false)
-      p = link_to 'Read more &raquo;'.html_safe, post
+  = render partial: 'shared/post_item', locals: { post: post }
 
 - if user_signed_in?
   .row

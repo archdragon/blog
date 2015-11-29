@@ -1,6 +1,6 @@
 #container.container-post.intro-effect-fadeout
   header.header
-    .bg-img 
+    .bg-img
       - if @post.image
         .inner-image style="background-image: url(#{asset_url(@post.image.image_file.url)})"
       - else
@@ -22,9 +22,18 @@
       article.col-md-10.col-md-offset-1
         = @post.formatted_text
 
-  .container.comments
-    .row
+    .row.tags
       .col-md-10.col-md-offset-1
+        hr
+        h2 Tags
+        - @post.tags.each do |tag|
+          .label.label-default.label-tag
+            = link_to tag, tag_name_path(tag.name)
+
+    .row.comments-temp
+      .col-md-10.col-md-offset-1
+        hr
+        h2 Comments
         = render partial: "disqus"
 
   .container

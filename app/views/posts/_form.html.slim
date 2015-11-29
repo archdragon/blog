@@ -28,4 +28,11 @@
     .col-sm-12
       .form-group
         = f.text_area :text, rows: 16, class: 'form-control'
+
+  .row
+    .col-sm-6
+      .form-group
+        label Tags
+        = f.text_field :tag_list, class: 'form-control'
+
   .actions = f.submit 'Save', class: 'btn btn-primary'
