@@ -14,20 +14,41 @@ html
 
   body
     = render partial: "shared/google_analytics"
+
+    #top-video
+      video autoplay="autoplay" loop="loop"
+        source src="/bg_snow.webm" type="video/webm"
+
     #top-background
       #top.container-fluid
         .container
           .row
             .col-sm-12
-              h1 
-                a href="/" Przemyslaw Krowinski Blog
+              h1
+                a href="/" Krowinski.com Blog
               p Personal blog about programming, web and game development
+
     - flash.each do |name, msg|
       .container
         = content_tag :div, msg, class: flash_class(name)
+
+    - if current_page?(root_path)
+      .author-intro
+        .container
+          .row
+            .col-sm-12
+              p
+                ' Hi! My name is 
+                = link_to 'Przemyslaw Krowinski', 'http://krowinski.com'
+                ' 
+                ' and
+                ' I'm a web developer living in Cracow, Poland.
+              p
+                ' I program in Ruby, experiment with
+                ' game development, design, programming languages and other cool things.
+
     #main-page.container
       = yield
-
       = render partial: 'shared/admin_footer'
 
     footer
