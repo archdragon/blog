@@ -45,8 +45,14 @@ html
                 ' and
                 ' I'm a web developer living in Cracow, Poland.
               p
-                ' I program in Ruby, experiment with
-                ' game development, design, programming languages and other cool things.
+                ' I program in
+                = link_to 'Ruby', tag_name_path('ruby')
+                ', experiment with
+                = link_to 'game development', tag_name_path('gamedev')
+                ' ,
+                = link_to 'design', tag_name_path('design')
+                ' ,
+                ' programming languages and other cool things.
 
     #main-page
       .container
