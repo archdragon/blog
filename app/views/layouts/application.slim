@@ -21,16 +21,17 @@ html
 
     #top-background
       #top.container-fluid
-        .container
-          .row
-            .col-sm-12
-              h1
-                a href="/" Krowinski.com Blog
-              p Personal blog about programming, web and game development
+        .row
+          .col-sm-12
+            h1
+              a href="/" Krowinski.com Blog
+            p Personal blog about programming, web and game development
 
     - flash.each do |name, msg|
       .container
-        = content_tag :div, msg, class: flash_class(name)
+        .row
+          .col-sm-12
+            = content_tag :div, msg, class: flash_class(name)
 
     - if current_page?(root_path)
       .author-intro
@@ -47,9 +48,12 @@ html
                 ' I program in Ruby, experiment with
                 ' game development, design, programming languages and other cool things.
 
-    #main-page.container
-      = yield
-      = render partial: 'shared/admin_footer'
+    #main-page
+      .container
+        = yield
+        .row
+          .col-sm-12
+            = render partial: 'shared/admin_footer'
 
     footer
       ul.nav-footer
