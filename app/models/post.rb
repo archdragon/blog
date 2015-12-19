@@ -7,6 +7,6 @@ class Post < ActiveRecord::Base
   extend FriendlyId
   friendly_id :title, use: :slugged
 
-  scope :published, -> { where(draft: false) }
-  scope :unpublished, -> { where(draft: true) }
+  scope :published,   -> { where(draft: false).order('created_at DESC') }
+  scope :unpublished, -> { where(draft:  true).order('created_at DESC') }
 end
