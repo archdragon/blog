@@ -4,8 +4,8 @@
 # or operating system, you probably want to add a global ignore instead:
 #   git config --global core.excludesfile '~/.gitignore_global'
 
-# WNeed to ignore Gemfile.lock when developing (and running bundle install) on Windows machine
-/Gemfile.lock
+# Ignore settings
+/config/database.yml
 
 # Ignore bundler config.
 /.bundle
