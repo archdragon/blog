@@ -17,7 +17,6 @@ body
 
 h1 
   padding: 2rem 0
-  margin: 7rem 0 1.5rem 0
   a, a:hover
     color: #ffffff
     text-decoration: none
@@ -30,9 +29,16 @@ h2
   margin-top: 5rem
 
 #main-page h2.post-title
-  color: #e74c3c
+  background-color: #434a54
+  color: #fff
+  display: inline-block
+  padding: 0.3em 0.6em
+  margin-top: 0
   a, a:hover, a:active
-    color: #e74c3c
+    color: #fff
+
+  &:hover
+    background-color: #636a74
 
 #main-page .post-text h2
   margin-top: 2rem
@@ -49,6 +55,7 @@ h2
   z-index: 1
 
 #top-background
+  background-color: #8cc152
   background-size: cover
   background-position: center center
 
@@ -58,27 +65,31 @@ h2
   z-index: 0
 
 #top
-  //text-shadow: 1px 1px 2px rgba(0,0,0,0.8)
-  height: 300px
+  padding: 7em 0
 
   .col-sm-12
     text-align: center
+
+  h1
+    margin-top: 0
+    padding-top: 0
+
   p
     font-size: 2.2rem
 
 #top,
 #top a
-  color: #414141
+  color: #fff
 
 /* Alerts */
 .alert
   margin: 3rem 0
 
 footer
-  background-color: #f1f1f1
+  background-color: #434a54
   text-align: center
   margin-top: 5rem
-  padding: 2rem 0
+  padding: 4rem 0
 
 .nav-footer
   display: inline-block
@@ -89,7 +100,7 @@ footer
 .nav-footer li
   display: inline-block
   a
-    color: #666666
+    color: #aaa
     padding: 1rem 2rem
 
 article p
@@ -111,9 +122,26 @@ article ul
 /* # Main Page Extras # */
 
 .author-intro
-  //color: #fff
+  color: #fff
   //background-color: #0E6670
   //background-color: #ebf5fa
-  background-color: #eee
+  background-color: #434a54
   padding: 6em 4em
   line-height: 2em
+
+.author-intro a,
+.author-intro a:hover
+  color: #ddd
+
+.post-section
+  display: inline-block
+  padding: 3em
+  height: 30em
+  width: 50%
+  overflow: hidden
+
+.post-section:nth-child(even)
+  background-color: #eee
+
+.post-section:nth-child(odd)
+  background-color: #fff

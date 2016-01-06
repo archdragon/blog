@@ -15,10 +15,6 @@ html
   body
     = render partial: "shared/google_analytics"
 
-    #top-video
-      video autoplay="autoplay" loop="loop"
-        source src="/bg_snow.webm" type="video/webm"
-
     #top-background
       #top.container-fluid
         .row
@@ -55,8 +51,8 @@ html
                 ' programming languages and other cool things.
 
     #main-page
+      = yield
       .container
-        = yield
         .row
           .col-sm-12
             = render partial: 'shared/admin_footer'
