@@ -1,6 +1,6 @@
 - post = present(post)
 section.post-section
-  .container-fluid
+  .container
     .row.post
       .col-md-12
         h2.post-title 
@@ -9,5 +9,4 @@ section.post-section
           '  
           .label.label-warning Unpublished
         .post-text = truncate(post.formatted_text, length: 350, separator: ' ', escape: false)
-        p = link_to 'Read more &raquo;'.html_safe, post
-      .col-md-2
+        p = link_to 'Read more &raquo;'.html_safe, post, class: 'default-link'

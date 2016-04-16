@@ -15,8 +15,18 @@ html
   body
     = render partial: "shared/google_analytics"
 
+    #top-bar
+      .container
+        .row
+          .col-sm-12
+            a.brand href="/" Home
+
+      .container
+        .row
+          hr#top-hr
+
     #top-background
-      #top.container-fluid
+      #top.container
         .row
           .col-sm-12
             h1
@@ -28,27 +38,6 @@ html
         .row
           .col-sm-12
             = content_tag :div, msg, class: flash_class(name)
-
-    - if current_page?(root_path)
-      .author-intro
-        .container
-          .row
-            .col-sm-12
-              p
-                ' Hi! My name is 
-                = link_to 'Przemyslaw Krowinski', 'http://krowinski.com'
-                ' 
-                ' and
-                ' I'm a web developer living in Cracow, Poland.
-              p
-                ' I program in
-                = link_to 'Ruby', tag_name_path('ruby')
-                ', experiment with
-                = link_to 'game development', tag_name_path('gamedev')
-                ' ,
-                = link_to 'design', tag_name_path('design')
-                ' ,
-                ' programming languages and other cool things.
 
     #main-page
       = yield
