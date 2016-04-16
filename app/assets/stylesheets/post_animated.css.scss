@@ -195,7 +195,7 @@ button.trigger span::before {
 .intro-effect-fadeout:not(.notrans) .header h1,
 .intro-effect-fadeout:not(.notrans) .header p,
 .intro-effect-fadeout:not(.notrans) .content {
-  transition: all 0.6s ease-out;
+  transition: all 0.3s ease-out;
 }
 
 .intro-effect-fadeout .header {
@@ -206,7 +206,7 @@ button.trigger span::before {
   //-webkit-transform: translateY(-5%);
   //transform: translateY(-5%);
   opacity: 0.8;
-  transition-duration: 0.6s;
+  transition-duration: 0.3s;
   transition-timing-function: ease-out;
 }
 
